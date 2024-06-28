@@ -39,6 +39,7 @@ export default function App() {
         <h1>DIAMIND</h1>
         <h1>circle</h1>
         <h1>Square</h1>
+        <h1>Triangle</h1>
         <Group h="100%" px="md">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
         </Group>
