@@ -36,6 +36,8 @@ export default function App() {
       padding="md"
     >
       <AppShell.Header>
+        <h1>DIAMIND</h1>
+        <h1>circle</h1>
         <Group h="100%" px="md">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
         </Group>
