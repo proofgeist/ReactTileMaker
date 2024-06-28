@@ -6,15 +6,21 @@ import {
   NavLink,
   Skeleton,
   Stack,
+  Text,
 } from "@mantine/core";
 import "@mantine/core/styles.css";
 import { useDisclosure } from "@mantine/hooks";
 import { useState } from "react";
 
+interface SidebarItemsType {
+  label: string;
+  description: string;
+}
+
 export default function App() {
   const [opened, { toggle }] = useDisclosure();
-  const [active, setActive] = useState("blah2");
-  const [sidebarItems, setData] = useState([
+
+  const [sidebarItems, setSideBarItems] = useState<SidebarItemsType[]>([
     {
       label: "blah",
       description: "something",
@@ -28,6 +34,8 @@ export default function App() {
       description: "something3",
     },
   ]);
+  const [active, setActive] = useState<SidebarItemsType>(sidebarItems[0]);
+
   console.log(active);
   return (
     <AppShell
@@ -46,16 +54,21 @@ export default function App() {
             <NavLink
               href="#required-for-focus"
               key={item.label}
-              onClick={() => setActive(item.label)}
+              onClick={() => setActive(item)}
               label={item.label}
               variant="subtle"
               description={item.description}
-              active={item.label === active}
+              active={item.label === active.label}
             />
           ))}
         </Stack>
       </AppShell.Navbar>
-      <AppShell.Main>This is the body</AppShell.Main>
+      <AppShell.Main>
+        <Stack>
+          <Text>Label: {active.label}</Text>
+          <Text size="sm">Description: {active.description}</Text>
+        </Stack>
+      </AppShell.Main>
     </AppShell>
   );
 }
