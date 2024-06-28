@@ -11,10 +11,11 @@ import {
 import "@mantine/core/styles.css";
 import { useDisclosure } from "@mantine/hooks";
 import { useState } from "react";
-
+import { v4 as uuid } from "uuid";
 interface SidebarItemsType {
   label: string;
   description: string;
+  id: string;
 }
 
 export default function App() {
@@ -24,19 +25,23 @@ export default function App() {
     {
       label: "blah",
       description: "something",
+      id: uuid(),
     },
     {
       label: "blah2",
       description: "something2",
+      id: uuid(),
     },
     {
       label: "blah3",
       description: "something3",
+      id: uuid(),
     },
   ]);
-  const [active, setActive] = useState<SidebarItemsType>(sidebarItems[0]);
+  // const [active, setActive] = useState<SidebarItemsType>(sidebarItems[0]);
+  const [activeId, setActiveId] = useState<string>(sidebarItems[0].id);
+  const activeItem = sidebarItems.find((item) => item.id === activeId);
 
-  console.log(active);
   return (
     <AppShell
       header={{ height: 60 }}
@@ -54,19 +59,19 @@ export default function App() {
             <NavLink
               href="#required-for-focus"
               key={item.label}
-              onClick={() => setActive(item)}
+              onClick={() => setActiveId(item.id)}
               label={item.label}
               variant="subtle"
               description={item.description}
-              active={item.label === active.label}
+              active={item.id === activeId}
             />
           ))}
         </Stack>
       </AppShell.Navbar>
       <AppShell.Main>
         <Stack>
-          <Text>Label: {active.label}</Text>
-          <Text size="sm">Description: {active.description}</Text>
+          <Text>Label: {activeItem?.label}</Text>
+          <Text size="sm">Description: {activeItem?.description}</Text>
         </Stack>
       </AppShell.Main>
     </AppShell>

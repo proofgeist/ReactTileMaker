@@ -943,6 +943,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/uuid@npm:^10":
+  version: 10.0.0
+  resolution: "@types/uuid@npm:10.0.0"
+  checksum: 10c0/9a1404bf287164481cb9b97f6bb638f78f955be57c40c6513b7655160beb29df6f84c915aaf4089a1559c216557dc4d2f79b48d978742d3ae10b937420ddac60
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/eslint-plugin@npm:^7.2.0":
   version: 7.2.0
   resolution: "@typescript-eslint/eslint-plugin@npm:7.2.0"
@@ -3349,6 +3356,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"uuid@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "uuid@npm:10.0.0"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 10c0/eab18c27fe4ab9fb9709a5d5f40119b45f2ec8314f8d4cf12ce27e4c6f4ffa4a6321dc7db6c515068fa373c075b49691ba969f0010bf37f44c37ca40cd6bf7fe
+  languageName: node
+  linkType: hard
+
 "vite-min-template@workspace:.":
   version: 0.0.0-use.local
   resolution: "vite-min-template@workspace:."
@@ -3357,6 +3373,7 @@ __metadata:
     "@mantine/hooks": "npm:7.10.2"
     "@types/react": "npm:^18.2.65"
     "@types/react-dom": "npm:^18.2.21"
+    "@types/uuid": "npm:^10"
     "@typescript-eslint/eslint-plugin": "npm:^7.2.0"
     "@typescript-eslint/parser": "npm:^7.2.0"
     "@vitejs/plugin-react": "npm:^4.2.1"
@@ -3369,6 +3386,7 @@ __metadata:
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     typescript: "npm:^5.4.2"
+    uuid: "npm:^10.0.0"
     vite: "npm:^5.1.6"
   languageName: unknown
   linkType: soft
